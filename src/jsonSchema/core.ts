@@ -21,6 +21,6 @@ export async function jsonSchemaToType(
     inputData,
     lang: targetLanguage,
     rendererOptions: { "just-types": "true" },
-    allPropertiesOptional: false,
+    // allPropertiesOptional: false,
   });
 }

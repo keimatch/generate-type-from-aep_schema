@@ -56,9 +56,9 @@ const schemaToJsonSchema = (schema: SchemaNode): JSONSchema => {
 
 const main = async () => {
   const testData = data as unknown as SchemaNode;
-  const hoge = schemaToJsonSchema(testData);
+  const out = schemaToJsonSchema(testData);
 
-  fs.writeFile("./out/data.json", JSON.stringify(hoge), "utf-8", () => {});
+  fs.writeFile("./out/data.json", JSON.stringify(out), "utf-8", () => {});
 };
 
 main();
