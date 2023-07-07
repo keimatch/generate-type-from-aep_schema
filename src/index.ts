@@ -1,11 +1,5 @@
-import type { SchemaNode, SchemaType, Property } from "./types";
-import {
-  getProperty,
-  getRootProperty,
-  getSchemaLabel,
-  getSchemaName,
-  getSchemaType,
-} from "./extract";
+import type { SchemaNode } from "./types";
+import { getProperty, getSchemaName } from "./extract";
 
 const tree = document.querySelector('[class ^= "SchemaTree__tree"]');
 
@@ -17,11 +11,11 @@ const toggle = (element: HTMLElement) => {
 };
 
 const open = (element: HTMLElement) => {
-  toggle(element);
+  if (element.ariaExpanded === "false") toggle(element);
 };
 
 const close = (element: HTMLElement) => {
-  toggle(element);
+  if (element.ariaExpanded === "true") toggle(element);
 };
 
 const isLeaf = () => {
@@ -42,10 +36,13 @@ const groupingDoms = (nodes: HTMLElement[]) => {
 };
 
 const getFieldDoms = ({ path, level }: { path: string; level: number }) => {
-  const elem = tree?.querySelectorAll(
-    `[data-node-path^="${path}"][data-level="${level}"]`
-  );
-  return elem;
+  if (level === 1) {
+    return tree?.querySelectorAll(`[data-level="${level}"]`);
+  } else {
+    return tree?.querySelectorAll(
+      `[data-node-path^="${path}"][data-level="${level}"]`
+    );
+  }
 };
 
 const walk = ({
@@ -58,39 +55,60 @@ const walk = ({
   level: number;
 }) => {
   open(group);
-  const parentPath = getSchemaName(group);
-  const children = getFieldDoms({ path: parentPath, level });
-  console.log("level", level);
-  console.log("children", children);
-};
+  const children = getFieldDoms({
+    path,
+    level,
+  });
 
-const enter = ({
-  schema,
-  groups,
-  leaves,
-  n = 1,
-}: {
-  schema: HTMLElement;
-  groups: HTMLElement[];
-  leaves: HTMLElement[];
-  n?: number;
-}): SchemaNode => {
-  const property = getRootProperty(schema);
-  const leafProps = leaves?.map((leaf) => getProperty(leaf));
+  const property = getProperty(group);
+  const abstract: SchemaNode = {
+    ...property,
+    leaves: [],
+    groups: [],
+    array: [],
+    path,
+  };
 
-  const topGroup = groups[0];
-  walk({ group: topGroup, path: "", level: n + 1 });
+  children?.forEach((child) => {
+    const name = getSchemaName(child as HTMLElement);
+    const nextPath = path ? path + "." + name : name;
+    const walked = walk({
+      group: child as HTMLElement,
+      path: nextPath,
+      level: level + 1,
+    });
 
-  return { ...property, leaves: leafProps };
+    if (walked.type === "Object") {
+      abstract.groups?.push(walked);
+    } else if (walked.type === "array[]") {
+      abstract.array?.push(walked);
+    } else {
+      abstract.leaves?.push(walked);
+    }
+  });
+  close(group);
+
+  return abstract;
 };
 
 const main = () => {
-  if (!tree) return;
+  if (!tree) {
+    console.log(
+      "Dom tree is not found. Click any dom element with dev-console"
+    );
+    return;
+  }
   const elementList = [...tree.childNodes] as HTMLElement[];
   const { root, leaves, groups } = groupingDoms(elementList);
-  if (!root) return;
-  const res = enter({ schema: root, leaves, groups });
+  if (!root) {
+    console.log("Root is not found");
+    return;
+  }
+  console.time();
+  console.log("enter");
+  const res = walk({ group: root, path: "", level: 1 });
   console.log("res", res);
+  console.timeEnd();
 };
 
 main();

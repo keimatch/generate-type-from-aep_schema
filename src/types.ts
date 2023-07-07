@@ -14,14 +14,17 @@ export type SchemaType =
   | "Memo"
   | "Blob"
   | "Object"
+  | "array[]"
   | "not specified";
 
 export type SchemaNode = {
   name: string;
+  path: string;
   type: SchemaType;
   value?: string;
   leaves?: SchemaNode[];
   groups?: SchemaNode[];
+  array?: SchemaNode[];
 };
 
 export type Property = {

@@ -9,7 +9,7 @@ export const getSchemaLabel = (fieldDom: HTMLElement) => {
 
 export const getSchemaName = (fieldDom: HTMLElement) => {
   const schemaNameNode = fieldDom.querySelector(
-    '[class ^= "IconTextPair__iconTextPair__"]'
+    '[class ^= "SchemaNode__name__"]'
   );
   return schemaNameNode?.textContent || "not specified";
 };
