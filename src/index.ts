@@ -17,8 +17,8 @@ const main = () => {
   }
   console.time();
   console.log("enter");
-  const res = walk({ root: tree, group: root, path: "", level: 1 });
-  console.log("res", res);
+  const schemaTree = walk({ root: tree, group: root, path: "", level: 1 });
+  console.log("res", schemaTree);
   console.timeEnd();
 };
 
