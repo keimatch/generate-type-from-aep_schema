@@ -6,15 +6,17 @@ export type SchemaType =
   | "Double"
   | "Long"
   | "Int64"
+  | "Integer"
   | "Date"
   | "Time"
-  | "Datetime"
+  | "DateTime"
   | "Datetimenotz"
   | "Timespan"
   | "Memo"
   | "Blob"
   | "Object"
   | "array[]"
+  | "Map"
   | "not specified";
 
 export type SchemaNode = {

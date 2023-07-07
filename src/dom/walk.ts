@@ -1,4 +1,4 @@
-import type { SchemaNode } from "../type/index";
+import type { SchemaNode } from "../type/schema";
 import { getFieldDoms, getProperty, getSchemaName } from "./extract";
 import { close, open } from "./operation";
 

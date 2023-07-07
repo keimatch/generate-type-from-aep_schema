@@ -34,34 +34,3 @@ export const getRootProperty = (schema: HTMLElement): Property => {
     type: "Object",
   };
 };
-
-export const groupingDoms = (nodes: HTMLElement[]) => {
-  // grouping
-  const root = nodes.find((c) => c.className.includes("SchemaNode__root"));
-  const leaves = nodes.filter((c) =>
-    c.className.includes("SchemaLeaf__leaf__")
-  );
-  const groups = nodes.filter((c) => {
-    return c !== root && !leaves.includes(c);
-  }) as HTMLElement[];
-
-  return { root, leaves, groups };
-};
-
-export const getFieldDoms = ({
-  target,
-  path,
-  level,
-}: {
-  target: Element | null;
-  path: string;
-  level: number;
-}) => {
-  if (level === 1) {
-    return target?.querySelectorAll(`[data-level="${level}"]`);
-  } else {
-    return target?.querySelectorAll(
-      `[data-node-path^="${path}"][data-level="${level}"]`
-    );
-  }
-};

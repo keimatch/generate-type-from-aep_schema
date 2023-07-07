@@ -286,13 +286,13 @@ var main = function main() {
   }
   console.time();
   console.log("enter");
-  var res = (0, _walk.walk)({
+  var schemaTree = (0, _walk.walk)({
     root: tree,
     group: root,
     path: "",
     level: 1
   });
-  console.log("res", res);
+  console.log("res", schemaTree);
   console.timeEnd();
 };
 main();
