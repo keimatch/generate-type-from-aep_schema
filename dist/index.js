@@ -117,13 +117,13 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"extract.ts":[function(require,module,exports) {
+})({"dom/extract.ts":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getSchemaType = exports.getSchemaName = exports.getSchemaLabel = exports.getRootProperty = exports.getProperty = void 0;
+exports.groupingDoms = exports.getSchemaType = exports.getSchemaName = exports.getSchemaLabel = exports.getRootProperty = exports.getProperty = exports.getFieldDoms = void 0;
 var getSchemaLabel = function getSchemaLabel(fieldDom) {
   var schemaLabelNode = fieldDom.querySelector('[class ^= "SchemaNode__label__"]');
   return (schemaLabelNode === null || schemaLabelNode === void 0 ? void 0 : schemaLabelNode.textContent) || "root";
@@ -153,36 +153,6 @@ var getRootProperty = function getRootProperty(schema) {
   };
 };
 exports.getRootProperty = getRootProperty;
-},{}],"index.ts":[function(require,module,exports) {
-"use strict";
-
-var _extract = require("./extract");
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-var tree = document.querySelector('[class ^= "SchemaTree__tree"]');
-var toggle = function toggle(element) {
-  var button = element.querySelector('[class ^= "SchemaNode__symbol__"]');
-  button === null || button === void 0 ? void 0 : button.click();
-};
-var open = function open(element) {
-  if (element.ariaExpanded === "false") toggle(element);
-};
-var close = function close(element) {
-  if (element.ariaExpanded === "true") toggle(element);
-};
-var isLeaf = function isLeaf() {
-  return true;
-};
 var groupingDoms = function groupingDoms(nodes) {
   // grouping
   var root = nodes.find(function (c) {
@@ -200,21 +170,60 @@ var groupingDoms = function groupingDoms(nodes) {
     groups: groups
   };
 };
+exports.groupingDoms = groupingDoms;
 var getFieldDoms = function getFieldDoms(_ref) {
-  var path = _ref.path,
+  var target = _ref.target,
+    path = _ref.path,
     level = _ref.level;
   if (level === 1) {
-    return tree === null || tree === void 0 ? void 0 : tree.querySelectorAll("[data-level=\"".concat(level, "\"]"));
+    return target === null || target === void 0 ? void 0 : target.querySelectorAll("[data-level=\"".concat(level, "\"]"));
   } else {
-    return tree === null || tree === void 0 ? void 0 : tree.querySelectorAll("[data-node-path^=\"".concat(path, "\"][data-level=\"").concat(level, "\"]"));
+    return target === null || target === void 0 ? void 0 : target.querySelectorAll("[data-node-path^=\"".concat(path, "\"][data-level=\"").concat(level, "\"]"));
   }
 };
-var walk = function walk(_ref2) {
-  var group = _ref2.group,
-    path = _ref2.path,
-    level = _ref2.level;
-  open(group);
-  var children = getFieldDoms({
+exports.getFieldDoms = getFieldDoms;
+},{}],"dom/operation.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.open = exports.close = void 0;
+var toggle = function toggle(element) {
+  var button = element.querySelector('[class ^= "SchemaNode__symbol__"]');
+  button === null || button === void 0 ? void 0 : button.click();
+};
+var open = function open(element) {
+  if (element.ariaExpanded === "false") toggle(element);
+};
+exports.open = open;
+var close = function close(element) {
+  if (element.ariaExpanded === "true") toggle(element);
+};
+exports.close = close;
+},{}],"dom/walk.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.walk = void 0;
+var _extract = require("./extract");
+var _operation = require("./operation");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+var walk = function walk(_ref) {
+  var root = _ref.root,
+    group = _ref.group,
+    path = _ref.path,
+    level = _ref.level;
+  (0, _operation.open)(group);
+  var children = (0, _extract.getFieldDoms)({
+    target: root,
     path: path,
     level: level
   });
@@ -229,6 +238,7 @@ var walk = function walk(_ref2) {
     var name = (0, _extract.getSchemaName)(child);
     var nextPath = path ? path + "." + name : name;
     var walked = walk({
+      root: root,
       group: child,
       path: nextPath,
       level: level + 1
@@ -244,16 +254,29 @@ var walk = function walk(_ref2) {
       (_abstract$leaves = abstract.leaves) === null || _abstract$leaves === void 0 ? void 0 : _abstract$leaves.push(walked);
     }
   });
-  close(group);
+  (0, _operation.close)(group);
   return abstract;
 };
+exports.walk = walk;
+},{"./extract":"dom/extract.ts","./operation":"dom/operation.ts"}],"index.ts":[function(require,module,exports) {
+"use strict";
+
+var _extract = require("./dom/extract");
+var _walk = require("./dom/walk");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 var main = function main() {
+  var tree = document.querySelector('[class ^= "SchemaTree__tree"]');
   if (!tree) {
     console.log("Dom tree is not found. Click any dom element with dev-console");
     return;
   }
   var elementList = _toConsumableArray(tree.childNodes);
-  var _groupingDoms = groupingDoms(elementList),
+  var _groupingDoms = (0, _extract.groupingDoms)(elementList),
     root = _groupingDoms.root,
     leaves = _groupingDoms.leaves,
     groups = _groupingDoms.groups;
@@ -263,7 +286,8 @@ var main = function main() {
   }
   console.time();
   console.log("enter");
-  var res = walk({
+  var res = (0, _walk.walk)({
+    root: tree,
     group: root,
     path: "",
     level: 1
@@ -272,7 +296,7 @@ var main = function main() {
   console.timeEnd();
 };
 main();
-},{"./extract":"extract.ts"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./dom/extract":"dom/extract.ts","./dom/walk":"dom/walk.ts"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
