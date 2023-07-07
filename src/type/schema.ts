@@ -1,4 +1,4 @@
-export type SchemaType =
+export type PureSchemaType =
   | "String"
   | "Boolean"
   | "Byte"
@@ -6,10 +6,9 @@ export type SchemaType =
   | "Double"
   | "Long"
   | "Int64"
-  | "Integer"
   | "Date"
   | "Time"
-  | "DateTime"
+  | "Datetime"
   | "Datetimenotz"
   | "Timespan"
   | "Memo"
@@ -17,6 +16,9 @@ export type SchemaType =
   | "Object"
   | "array[]"
   | "not specified";
+
+export type UiSchemaType = "Integer" | "DateTime";
+export type SchemaType = PureSchemaType & UiSchemaType;
 
 export type SchemaNode = {
   name: string;
