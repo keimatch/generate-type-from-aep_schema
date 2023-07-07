@@ -27,10 +27,3 @@ export const getProperty = (schema: HTMLElement): Property => {
     type: getSchemaType(schema),
   };
 };
-
-export const getRootProperty = (schema: HTMLElement): Property => {
-  return {
-    name: getSchemaLabel(schema),
-    type: "Object",
-  };
-};

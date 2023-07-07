@@ -28,13 +28,6 @@ export const getProperty = (schema: HTMLElement): Property => {
   };
 };
 
-export const getRootProperty = (schema: HTMLElement): Property => {
-  return {
-    name: getSchemaLabel(schema),
-    type: "Object",
-  };
-};
-
 export const groupingDoms = (nodes: HTMLElement[]) => {
   // grouping
   const root = nodes.find((c) => c.className.includes("SchemaNode__root"));
