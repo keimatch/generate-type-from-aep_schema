@@ -21,10 +21,10 @@ export interface Schema {
     producedBy?:            string;
     productListItems?:      ProductListItem[];
     profileStitch?:         ProfileStitch[];
-    receivedTimestamp?:     any;
+    receivedTimestamp?:     string;
     search?:                SchemaSearch;
     segmentMembership?:     any;
-    timestamp?:             any;
+    timestamp?:             string;
     userActivityRegion?:    UserActivityRegion;
     web?:                   SchemaWeb;
     [property: string]: any;
@@ -1068,7 +1068,7 @@ export interface Props {
 }
 
 export interface EndUser {
-    firstTimestamp?: any;
+    firstTimestamp?: number;
     firstWeb?:       FirstWeb;
     [property: string]: any;
 }
@@ -8166,10 +8166,10 @@ export interface PurpleEvent999 {
 }
 
 export interface Session {
-    depth?:     any;
-    num?:       any;
+    depth?:     number;
+    num?:       number;
     search?:    SessionSearch;
-    timestamp?: any;
+    timestamp?: number;
     web?:       SessionWeb;
     [property: string]: any;
 }
@@ -8177,8 +8177,8 @@ export interface Session {
 export interface SessionSearch {
     isPaid?:         boolean;
     keywords?:       string;
-    pageDepth?:      any;
-    position?:       any;
+    pageDepth?:      number;
+    position?:       number;
     searchEngine?:   string;
     searchEngineID?: string;
     slot?:           string;
@@ -8245,12 +8245,12 @@ export interface PropositionAction {
 }
 
 export interface PropositionEventType {
-    dismiss?:     any;
-    display?:     any;
-    interact?:    any;
-    send?:        any;
-    trigger?:     any;
-    unsubscribe?: any;
+    dismiss?:     number;
+    display?:     number;
+    interact?:    number;
+    send?:        number;
+    trigger?:     number;
+    unsubscribe?: number;
     [property: string]: any;
 }
 
@@ -8341,11 +8341,11 @@ export interface ScopeDetails {
 
 export interface Activity {
     _repo?:     ActivityRepo;
-    endTime?:   any;
+    endTime?:   string;
     fallback?:  string;
     id?:        string;
     name?:      string;
-    startTime?: any;
+    startTime?: string;
     [property: string]: any;
 }
 
@@ -8508,13 +8508,13 @@ export interface AdAssetReferenceDc {
 }
 
 export interface AdAssetReferenceXmpDM {
-    duration?: any;
+    duration?: number;
     [property: string]: any;
 }
 
 export interface AdAssetViewDetails {
     adBreak?:    AdBreak;
-    index?:      any;
+    index?:      number;
     playerName?: string;
     [property: string]: any;
 }
@@ -8522,7 +8522,7 @@ export interface AdAssetViewDetails {
 export interface AdBreak {
     _dc?:    AdBreakDc;
     _id?:    string;
-    offset?: any;
+    offset?: number;
     [property: string]: any;
 }
 
@@ -8533,16 +8533,16 @@ export interface AdBreakDc {
 
 export interface AdViewability {
     activeWindow?:                   boolean;
-    adHeight?:                       any;
-    adUnitDepth?:                    any;
-    adWidth?:                        any;
+    adHeight?:                       number;
+    adUnitDepth?:                    number;
+    adWidth?:                        number;
     implementationDetails?:          AdViewabilityImplementationDetails;
     measuredAdNotVisible?:           MeasuredAdNotVisible;
     measuredMuted?:                  MeasuredMuted;
     measuredWindowInactive?:         MeasuredWindowInactive;
     measurementEligible?:            boolean;
-    percentViewable?:                any;
-    playerVolume?:                   any;
+    percentViewable?:                number;
+    playerVolume?:                   number;
     unmeasurableIframe?:             UnmeasurableIframe;
     unmeasurableOther?:              UnmeasurableOther;
     viewabilityEligibleImpressions?: ViewabilityEligibleImpressions;
@@ -8552,8 +8552,8 @@ export interface AdViewability {
     viewableImpressions?:            ViewableImpressions;
     viewableMidpoints?:              ViewableMidpoints;
     viewableThirdQuartiles?:         ViewableThirdQuartiles;
-    viewportHeight?:                 any;
-    viewportWidth?:                  any;
+    viewportHeight?:                 number;
+    viewportWidth?:                  number;
     [property: string]: any;
 }
 
@@ -8705,7 +8705,7 @@ export interface Application {
     isUpgrade?:         boolean;
     launches?:          Launches;
     name?:              string;
-    sessionLength?:     any;
+    sessionLength?:     number;
     upgrades?:          Upgrades;
     userPerspective?:   string;
     version?:           string;
@@ -8827,11 +8827,11 @@ export interface InstantPurchase {
 }
 
 export interface Order {
-    cancelDate?:          any;
-    createdDate?:         any;
+    cancelDate?:          string;
+    createdDate?:         string;
     currencyCode?:        string;
     discountAmount?:      number;
-    lastUpdatedDate?:     any;
+    lastUpdatedDate?:     string;
     orderType?:           string;
     payments?:            Payment[];
     priceTotal?:          number;
@@ -8935,7 +8935,7 @@ export interface SaveForLaters {
 export interface Shipping {
     address?:             Address;
     currencyCode?:        string;
-    shipDate?:            any;
+    shipDate?:            string;
     shippingAmount?:      number;
     shippingDestination?: string;
     shippingMethod?:      string;
@@ -8952,11 +8952,11 @@ export interface Address {
     country?:                  string;
     countryCode?:              string;
     createdByBatchID?:         string;
-    dmaID?:                    any;
+    dmaID?:                    number;
     label?:                    string;
     lastVerifiedDate?:         string;
     modifiedByBatchID?:        string;
-    msaID?:                    any;
+    msaID?:                    number;
     postalCode?:               string;
     postOfficeBox?:            string;
     primary?:                  boolean;
@@ -8975,8 +8975,8 @@ export interface Address {
 }
 
 export interface AddressRepo {
-    createDate?: any;
-    modifyDate?: any;
+    createDate?: string;
+    modifyDate?: string;
     [property: string]: any;
 }
 
@@ -8996,7 +8996,7 @@ export interface DataSource {
 }
 
 export interface Device {
-    colorDepth?:              any;
+    colorDepth?:              number;
     isBackgroundPushEnabled?: boolean;
     isLocationEnabled?:       boolean;
     isPushOptIn?:             boolean;
@@ -9004,9 +9004,9 @@ export interface Device {
     manufacturer?:            string;
     model?:                   string;
     modelNumber?:             string;
-    screenHeight?:            any;
+    screenHeight?:            number;
     screenOrientation?:       string;
-    screenWidth?:             any;
+    screenWidth?:             number;
     type?:                    string;
     typeID?:                  string;
     typeIDService?:           string;
@@ -9259,10 +9259,10 @@ export interface SchemaEnvironment {
     _dc?:                    EnvironmentDc;
     browserDetails?:         BrowserDetails;
     carrier?:                string;
-    colorDepth?:             any;
+    colorDepth?:             number;
     connectionType?:         string;
     domain?:                 string;
-    duration?:               any;
+    duration?:               number;
     ipV4?:                   string;
     ipV6?:                   string;
     ISP?:                    string;
@@ -9272,8 +9272,8 @@ export interface SchemaEnvironment {
     previousScreen?:         string;
     type?:                   string;
     viewedScreen?:           string;
-    viewportHeight?:         any;
-    viewportWidth?:          any;
+    viewportHeight?:         number;
+    viewportWidth?:          number;
     [property: string]: any;
 }
 
@@ -9296,8 +9296,8 @@ export interface BrowserDetails {
     userAgentClientHints?:     UserAgentClientHints;
     vendor?:                   string;
     version?:                  string;
-    viewportHeight?:           any;
-    viewportWidth?:            any;
+    viewportHeight?:           number;
+    viewportWidth?:            number;
     [property: string]: any;
 }
 
@@ -9348,7 +9348,7 @@ export interface MediaTimed {
     pauseImpactedStreams?:    PauseImpactedStreams;
     pauses?:                  Pauses;
     pauseTime?:               PauseTime;
-    playhead?:                any;
+    playhead?:                number;
     primaryAssetReference?:   PrimaryAssetReference;
     primaryAssetViewDetails?: PrimaryAssetViewDetails;
     progress10?:              Progress10;
@@ -9433,13 +9433,13 @@ export interface ChapterAssetReferenceDc {
 }
 
 export interface ChapterAssetReferenceXmpDM {
-    duration?: any;
+    duration?: number;
     [property: string]: any;
 }
 
 export interface ChapterAssetViewDetails {
-    index?:  any;
-    offset?: any;
+    index?:  number;
+    offset?: number;
     [property: string]: any;
 }
 
@@ -9612,7 +9612,7 @@ export interface SeriesIptc4XmpEXT {
 }
 
 export interface PrimaryAssetReferenceXmpDM {
-    duration?:    any;
+    duration?:    number;
     releaseDate?: string;
     [property: string]: any;
 }
@@ -9633,7 +9633,7 @@ export interface PrimaryAssetViewDetails {
     playerName?:           string;
     playerSDKVersion?:     PlayerSDKVersion;
     qoe?:                  Qoe;
-    sessionTimeout?:       any;
+    sessionTimeout?:       number;
     sourceFeed?:           string;
     statesEnd?:            any;
     statesStart?:          any;
@@ -9643,37 +9643,37 @@ export interface PrimaryAssetViewDetails {
 }
 
 export interface CloseCaption {
-    playerStateCount?: any;
+    playerStateCount?: number;
     playerStateSet?:   boolean;
-    playerStateTime?:  any;
+    playerStateTime?:  number;
     [property: string]: any;
 }
 
 export interface FullScreen {
-    playerStateCount?: any;
+    playerStateCount?: number;
     playerStateSet?:   boolean;
-    playerStateTime?:  any;
+    playerStateTime?:  number;
     [property: string]: any;
 }
 
 export interface InFocus {
-    playerStateCount?: any;
+    playerStateCount?: number;
     playerStateSet?:   boolean;
-    playerStateTime?:  any;
+    playerStateTime?:  number;
     [property: string]: any;
 }
 
 export interface Mute {
-    playerStateCount?: any;
+    playerStateCount?: number;
     playerStateSet?:   boolean;
-    playerStateTime?:  any;
+    playerStateTime?:  number;
     [property: string]: any;
 }
 
 export interface PictureInPicture {
-    playerStateCount?: any;
+    playerStateCount?: number;
     playerStateSet?:   boolean;
-    playerStateTime?:  any;
+    playerStateTime?:  number;
     [property: string]: any;
 }
 
@@ -9868,8 +9868,8 @@ export interface PlaceContext {
     activePOIs?:          ActivePOIs[];
     geo?:                 Geo;
     ianaTimezone?:        string;
-    localTime?:           any;
-    localTimezoneOffset?: any;
+    localTime?:           string;
+    localTimezoneOffset?: number;
     POIinteraction?:      POIinteraction;
     [property: string]: any;
 }
@@ -10118,8 +10118,8 @@ export interface Geo {
     _schema?:       GeoSchema;
     city?:          string;
     countryCode?:   string;
-    dmaID?:         any;
-    msaID?:         any;
+    dmaID?:         number;
+    msaID?:         number;
     postalCode?:    string;
     stateProvince?: string;
     [property: string]: any;
@@ -10144,7 +10144,7 @@ export interface ProductListItem {
     productAddMethod?:  string;
     productCategories?: ProductCategory[];
     productImageUrl?:   string;
-    quantity?:          any;
+    quantity?:          number;
     refundAmount?:      number;
     selectedOptions?:   SelectedOption[];
     SKU?:               string;
@@ -17506,8 +17506,8 @@ export interface ProfileStitchIDNamespace {
 export interface SchemaSearch {
     isPaid?:         boolean;
     keywords?:       string;
-    pageDepth?:      any;
-    position?:       any;
+    pageDepth?:      number;
+    position?:       number;
     searchEngine?:   string;
     searchEngineID?: string;
     slot?:           string;
@@ -17515,7 +17515,7 @@ export interface SchemaSearch {
 }
 
 export interface UserActivityRegion {
-    captureTimestamp?:   any;
+    captureTimestamp?:   string;
     dataCenterLocation?: string;
     [property: string]: any;
 }

@@ -16,7 +16,6 @@ export type SchemaType =
   | "Blob"
   | "Object"
   | "array[]"
-  | "Map"
   | "not specified";
 
 export type SchemaNode = {
