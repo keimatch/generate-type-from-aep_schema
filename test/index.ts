@@ -4,7 +4,7 @@ const schema: Schema = {
   web: {
     webPageDetails: {
       name: "hoge:foo:bar",
+      isHomePage: "yes",
     },
-    we,
   },
 };
