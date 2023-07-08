@@ -26,7 +26,7 @@ That's it! You're all set to use the tool and enjoy the benefits of type safety 
 
 By using the generated type, you will receive an error if you try to input a field that does not exist in the schema.
 
-```
+```typescript
 import type { Schema } from "../out/type";
 
 const schema: Schema = {
@@ -41,6 +41,6 @@ const schema: Schema = {
 
 Additionally, the tool provides suggestions while entering field names, which helps reduce your working time.
 
-![Alt text](image.png)
+![Alt text](image.png | width=200)
 
 Looking forward to seeing your code shine with enhanced reliability and fewer bugs. Happy coding!
