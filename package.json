@@ -9,9 +9,10 @@
     "compile": "tsc",
     "build": "parcel build --no-cache src/index.ts",
     "watch": "parcel watch --no-cache src/index.ts",
-    "generate": "run-s generate:jsonSchema generate:type",
-    "generate:jsonSchema": "ts-node ./src/jsonSchema/compile.ts",
-    "generate:type": "quicktype --src-lang schema ./out/data.json --lang typescript --out ./out/type.ts --top-level Schema --just-types"
+    "generate": "run-s generate:jsonSchema generate:type generate:remove-any",
+    "generate:jsonSchema": "ts-node ./src/jsonSchema/restructure.ts",
+    "generate:type": "quicktype --src-lang schema ./out/data.json --lang typescript --out ./out/type.ts --top-level Schema --just-types",
+    "generate:remove-any": "sed -i '' '/property: string/d' out/type.ts"
   },
   "author": "",
   "license": " No license field",

@@ -1,65 +1,199 @@
 {
-  "name": "Audit trail",
+  "name": "Web Details",
   "type": "not specified",
-  "leaves": [
-    {
-      "name": "createdByBatchID",
-      "type": "String",
-      "leaves": [],
-      "groups": [],
-      "array": [],
-      "path": "createdByBatchID"
-    },
-    {
-      "name": "modifiedByBatchID",
-      "type": "String",
-      "leaves": [],
-      "groups": [],
-      "array": [],
-      "path": "modifiedByBatchID"
-    },
-    {
-      "name": "repositoryCreatedBy",
-      "type": "String",
-      "leaves": [],
-      "groups": [],
-      "array": [],
-      "path": "repositoryCreatedBy"
-    },
-    {
-      "name": "repositoryLastModifiedBy",
-      "type": "String",
-      "leaves": [],
-      "groups": [],
-      "array": [],
-      "path": "repositoryLastModifiedBy"
-    }
-  ],
+  "leaves": [],
   "groups": [
     {
-      "name": "_repo",
+      "name": "web",
       "type": "Object",
-      "leaves": [
+      "leaves": [],
+      "groups": [
         {
-          "name": "createDate",
-          "type": "DateTime",
-          "leaves": [],
-          "groups": [],
+          "name": "webInteraction",
+          "type": "Object",
+          "leaves": [
+            {
+              "name": "URL",
+              "type": "String",
+              "leaves": [],
+              "groups": [],
+              "array": [],
+              "path": "web.webInteraction.URL"
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "leaves": [],
+              "groups": [],
+              "array": [],
+              "path": "web.webInteraction.name"
+            },
+            {
+              "name": "region",
+              "type": "String",
+              "leaves": [],
+              "groups": [],
+              "array": [],
+              "path": "web.webInteraction.region"
+            },
+            {
+              "name": "type",
+              "type": "String",
+              "leaves": [],
+              "groups": [],
+              "array": [],
+              "path": "web.webInteraction.type"
+            }
+          ],
+          "groups": [
+            {
+              "name": "linkClicks",
+              "type": "Object",
+              "leaves": [
+                {
+                  "name": "id",
+                  "type": "String",
+                  "leaves": [],
+                  "groups": [],
+                  "array": [],
+                  "path": "web.webInteraction.linkClicks.id"
+                },
+                {
+                  "name": "value",
+                  "type": "Double",
+                  "leaves": [],
+                  "groups": [],
+                  "array": [],
+                  "path": "web.webInteraction.linkClicks.value"
+                }
+              ],
+              "groups": [],
+              "array": [],
+              "path": "web.webInteraction.linkClicks"
+            }
+          ],
           "array": [],
-          "path": "_repo.createDate"
+          "path": "web.webInteraction"
         },
         {
-          "name": "modifyDate",
-          "type": "DateTime",
-          "leaves": [],
+          "name": "webPageDetails",
+          "type": "Object",
+          "leaves": [
+            {
+              "name": "URL",
+              "type": "String",
+              "leaves": [],
+              "groups": [],
+              "array": [],
+              "path": "web.webPageDetails.URL"
+            },
+            {
+              "name": "isErrorPage",
+              "type": "Boolean",
+              "leaves": [],
+              "groups": [],
+              "array": [],
+              "path": "web.webPageDetails.isErrorPage"
+            },
+            {
+              "name": "isHomePage",
+              "type": "Boolean",
+              "leaves": [],
+              "groups": [],
+              "array": [],
+              "path": "web.webPageDetails.isHomePage"
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "leaves": [],
+              "groups": [],
+              "array": [],
+              "path": "web.webPageDetails.name"
+            },
+            {
+              "name": "server",
+              "type": "String",
+              "leaves": [],
+              "groups": [],
+              "array": [],
+              "path": "web.webPageDetails.server"
+            },
+            {
+              "name": "siteSection",
+              "type": "String",
+              "leaves": [],
+              "groups": [],
+              "array": [],
+              "path": "web.webPageDetails.siteSection"
+            },
+            {
+              "name": "viewName",
+              "type": "String",
+              "leaves": [],
+              "groups": [],
+              "array": [],
+              "path": "web.webPageDetails.viewName"
+            }
+          ],
+          "groups": [
+            {
+              "name": "pageViews",
+              "type": "Object",
+              "leaves": [
+                {
+                  "name": "id",
+                  "type": "String",
+                  "leaves": [],
+                  "groups": [],
+                  "array": [],
+                  "path": "web.webPageDetails.pageViews.id"
+                },
+                {
+                  "name": "value",
+                  "type": "Double",
+                  "leaves": [],
+                  "groups": [],
+                  "array": [],
+                  "path": "web.webPageDetails.pageViews.value"
+                }
+              ],
+              "groups": [],
+              "array": [],
+              "path": "web.webPageDetails.pageViews"
+            }
+          ],
+          "array": [],
+          "path": "web.webPageDetails"
+        },
+        {
+          "name": "webReferrer",
+          "type": "Object",
+          "leaves": [
+            {
+              "name": "URL",
+              "type": "String",
+              "leaves": [],
+              "groups": [],
+              "array": [],
+              "path": "web.webReferrer.URL"
+            },
+            {
+              "name": "type",
+              "type": "String",
+              "leaves": [],
+              "groups": [],
+              "array": [],
+              "path": "web.webReferrer.type"
+            }
+          ],
           "groups": [],
           "array": [],
-          "path": "_repo.modifyDate"
+          "path": "web.webReferrer"
         }
       ],
-      "groups": [],
       "array": [],
-      "path": "_repo"
+      "path": "web"
     }
   ],
   "array": [],
