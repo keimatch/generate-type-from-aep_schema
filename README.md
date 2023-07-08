@@ -25,7 +25,7 @@ To set up and use the tool, follow these steps:
 
 1. Open the page of the schema for which you want to create types.
 2. Open the developer tools console.
-3. Execute the following command.
+3. Execute the following command to build scraping script.
 
 ```shell
 npm run build
@@ -35,15 +35,16 @@ npm run build
 5. Paste the copied code into the console and execute it.
 6. An object will be outputted to the console. Copy that object.
 7. Paste the copied object into a file named `input/data.json` and save it.
-8. Run the following command in your terminal.
+8. Run the following command to generate the type.
 
 ```shell
 npm run generate
 ```
 
-9. The generated type will be available in the `file out/type.ts`. Use it in your typescript code!
+9. The generated type will be available in the file `out/type.ts`. Use it in your typescript code!
 
-That's it! You're all set to use the tool and enjoy the benefits of type safety with XDM schemas. If you have any questions or encounter any issues, feel free to reach out to me. I'm here to help!
+That's it! You're all set to use the tool and enjoy the benefits of type safety with XDM schemas.
+If you have any questions or encounter any issues, feel free to reach out to me. I'm here to help!💪
 
 # Usage
 
