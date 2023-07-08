@@ -3,7 +3,7 @@ import type { SchemaNode, SchemaType } from "../type/schema";
 import { JSONSchema } from "json-schema-to-typescript";
 import data from "../../input/data.json" assert { type: "json" };
 
-const toJsonSchemaType: { [g in SchemaType]: any } = {
+const toJsonSchemaType: { [k in SchemaType]: any } = {
   String: "string",
   Boolean: "boolean",
   Byte: "string",
@@ -15,6 +15,7 @@ const toJsonSchemaType: { [g in SchemaType]: any } = {
   Date: "string",
   Time: "string",
   DateTime: "string",
+  Datetime: "string",
   Datetimenotz: "string",
   Timespan: "string",
   Memo: "string",
@@ -22,7 +23,9 @@ const toJsonSchemaType: { [g in SchemaType]: any } = {
   Object: "object",
   "array[]": "null",
   "not specified": "null",
-};
+} as const;
+
+Object.hasOwn(toJsonSchemaType, "");
 
 const makeObject = (schema: SchemaNode) => {
   const leaves = schema.leaves;
@@ -31,7 +34,9 @@ const makeObject = (schema: SchemaNode) => {
   const props: JSONSchema["properties"] = {};
   leaves?.forEach((leaf) => {
     props[leaf.name] = {
-      type: toJsonSchemaType[leaf.type],
+      type: Object.hasOwn(toJsonSchemaType, leaf.type)
+        ? toJsonSchemaType[leaf.type]
+        : "null",
     };
   });
   group?.forEach((obj) => {

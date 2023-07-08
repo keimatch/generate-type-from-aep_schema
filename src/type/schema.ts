@@ -18,7 +18,7 @@ export type PureSchemaType =
   | "not specified";
 
 export type UiSchemaType = "Integer" | "DateTime";
-export type SchemaType = PureSchemaType & UiSchemaType;
+export type SchemaType = PureSchemaType | UiSchemaType;
 
 export type SchemaNode = {
   name: string;
