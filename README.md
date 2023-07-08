@@ -1,6 +1,8 @@
 # Overview
 
-This tool is a script that converts Adobe Experience Platform's XDM schema into TypeScript types. By using this tool, you can leverage XDM in a type-safe manner, avoiding input of information that doesn't conform to the schema. This minimizes potential bugs and enhances the overall robustness of your code.
+This tool is a script that converts Adobe Experience Platform's XDM schema into TypeScript types.
+By using this tool, you can leverage XDM in a type-safe manner, avoiding input of information that doesn't conform to the schema.
+This minimizes potential bugs and enhances the overall robustness of your code.
 
 # Install
 
