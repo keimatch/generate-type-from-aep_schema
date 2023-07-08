@@ -39,10 +39,10 @@ const schema: Schema = {
 };
 ```
 
-<img src='image-1.png' width='600px'/>
+<img src='./assets/typeerror.png' width='600px'/>
 
 Additionally, the tool provides suggestions while entering field names, which helps reduce your working time.
 
-<img src='image.png' width='600px'/>
+<img src='./assets/suggestion.png' width='600px'/>
 
 Looking forward to seeing your code shine with enhanced reliability and fewer bugs. Happy coding!
