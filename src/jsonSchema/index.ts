@@ -20,8 +20,8 @@ const toJsonSchemaType: { [g in SchemaType]: any } = {
   Memo: "string",
   Blob: "string",
   Object: "object",
-  "array[]": "any",
-  "not specified": "any",
+  "array[]": "null",
+  "not specified": "null",
 };
 
 const makeObject = (schema: SchemaNode) => {
