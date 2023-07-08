@@ -33,11 +33,13 @@ const schema: Schema = {
   web: {
     webPageDetails: {
       name: "hoge:foo:bar",
-      isHomePage: "yes!", // 型 'string' を型 'boolean | undefined' に割り当てることはできません。
+      isHomePage: "yes!",
     },
   },
 };
 ```
+
+<img src='image-1.png' width='600px'/>
 
 Additionally, the tool provides suggestions while entering field names, which helps reduce your working time.
 
