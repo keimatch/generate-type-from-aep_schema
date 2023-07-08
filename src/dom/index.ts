@@ -5,7 +5,7 @@ const main = () => {
   const tree = document.querySelector('[class ^= "SchemaTree__tree"]');
   if (!tree) {
     console.log(
-      "Dom tree is not found. Click any dom element with dev-console"
+      "Dom tree is not found. Click any dom elements with dev-console"
     );
     return;
   }
