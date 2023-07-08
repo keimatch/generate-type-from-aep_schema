@@ -1,5 +1,5 @@
-import { groupingDoms } from "./dom/extract";
-import { walk } from "./dom/walk";
+import { groupingDoms } from "./extract";
+import { walk } from "./walk";
 
 const main = () => {
   const tree = document.querySelector('[class ^= "SchemaTree__tree"]');

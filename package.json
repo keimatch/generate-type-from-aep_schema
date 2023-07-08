@@ -7,10 +7,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "tsc",
-    "build": "parcel build --no-cache src/index.ts",
-    "watch": "parcel watch --no-cache src/index.ts",
+    "build": "parcel build --no-cache src/dom/index.ts",
+    "watch": "parcel watch --no-cache src/dom/index.ts",
     "generate": "run-s generate:jsonSchema generate:type generate:remove-any",
-    "generate:jsonSchema": "ts-node ./src/jsonSchema/restructure.ts",
+    "generate:jsonSchema": "ts-node ./src/jsonSchema/index.ts",
     "generate:type": "quicktype --src-lang schema ./out/data.json --lang typescript --out ./out/type.ts --top-level Schema --just-types",
     "generate:remove-any": "sed -i '' '/property: string/d' out/type.ts"
   },
