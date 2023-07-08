@@ -4,7 +4,7 @@ import { walk } from "./walk";
 const main = () => {
   const tree = document.querySelector('[class ^= "SchemaTree__tree"]');
   if (!tree) {
-    console.log(
+    console.error(
       "Dom tree is not found. Click any dom elements with dev-console"
     );
     return;
@@ -12,7 +12,7 @@ const main = () => {
   const elementList = [...tree.childNodes] as HTMLElement[];
   const { root } = groupingDoms(elementList);
   if (!root) {
-    console.log("Root is not found");
+    console.error("Root is not found");
     return;
   }
   console.time();
