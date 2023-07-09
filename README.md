@@ -1,7 +1,7 @@
 # Overview
 
-This tool is a script that converts Adobe Experience Platform's XDM schema into TypeScript types.
-By using this tool, you can leverage XDM in a type-safe manner, avoiding input of information that doesn't conform to the schema.
+This tool is a script that converts Adobe Experience Platform's XDM schema into TypeScript types.  
+By using this tool, you can leverage XDM in a type-safe manner, avoiding input of information that doesn't conform to the schema.  
 This minimizes potential bugs and enhances the overall robustness of your code.
 
 > **Warning**  
@@ -46,12 +46,15 @@ npm run generate
 
 9. The generated type will be available in the file `out/type.ts`. Use it in your typescript code!
 
-That's it! You're all set to use the tool and enjoy the benefits of type safety with XDM schemas.
+That's it! You're all set to use the tool and enjoy the benefits of type safety with XDM schemas.  
 If you have any questions or encounter any issues, feel free to reach out to me. I'm here to help!💪
 
 # Usage
 
 By using the generated type, you will receive an error if you try to input a field that does not exist in the schema.
+
+> **Note**  
+> Make sure to execute it within a .ts file.
 
 ```typescript
 import type { Schema } from "../out/type";
