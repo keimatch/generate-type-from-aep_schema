@@ -25,8 +25,6 @@ const toJsonSchemaType: { [k in SchemaType]: any } = {
   "not specified": "null",
 } as const;
 
-Object.hasOwn(toJsonSchemaType, "");
-
 const makeObject = (schema: SchemaNode) => {
   const leaves = schema.leaves;
   const group = schema.groups;
