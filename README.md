@@ -54,7 +54,7 @@ If you have any questions or encounter any issues, feel free to reach out to me.
 By using the generated type, you will receive an error if you try to input a field that does not exist in the schema.
 
 > **Note**  
-> Make sure to execute it within a .ts file.
+> Make sure to execute it within a '.ts' file.
 
 ```typescript
 import type { Schema } from "../out/type";
