@@ -27,6 +27,8 @@ npm run install
 To set up and use the tool, follow these steps:
 
 1. Open the page of the schema for which you want to create types.
+   <img src='./assets/schema.png' width='600px'/>
+
 2. Open the developer tools console.
 3. Execute the following command to build scraping script.
 
