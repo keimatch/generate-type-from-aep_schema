@@ -4,6 +4,9 @@ This tool is a script that converts Adobe Experience Platform's XDM schema into 
 By using this tool, you can leverage XDM in a type-safe manner, avoiding input of information that doesn't conform to the schema.
 This minimizes potential bugs and enhances the overall robustness of your code.
 
+> **Warning**
+> This tool is an unofficial Adobe tool. Please note that if the DOM structure of the Schema page changes, there is a possibility that the tool may not function correctly
+
 # Requirement
 
 It is recommended to have the following versions installed:
