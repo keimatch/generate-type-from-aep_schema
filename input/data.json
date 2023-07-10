@@ -1,705 +1,201 @@
 {
-  "name": "Commerce Details",
+  "name": "Web Details",
   "type": "not specified",
   "leaves": [],
   "groups": [
     {
-      "name": "commerce",
+      "name": "web",
       "type": "Object",
-      "leaves": [
-        {
-          "name": "cart",
-          "type": "not specified",
-          "leaves": [],
-          "groups": [],
-          "array": [],
-          "path": "commerce.cart"
-        },
-        {
-          "name": "promotionID",
-          "type": "String",
-          "leaves": [],
-          "groups": [],
-          "array": [],
-          "path": "commerce.promotionID"
-        },
-        {
-          "name": "requisitionList",
-          "type": "not specified",
-          "leaves": [],
-          "groups": [],
-          "array": [],
-          "path": "commerce.requisitionList"
-        },
-        {
-          "name": "shipping",
-          "type": "not specified",
-          "leaves": [],
-          "groups": [],
-          "array": [],
-          "path": "commerce.shipping"
-        }
-      ],
+      "leaves": [],
       "groups": [
         {
-          "name": "cartAbandons",
+          "name": "webInteraction",
           "type": "Object",
           "leaves": [
             {
-              "name": "id",
+              "name": "URL",
               "type": "String",
               "leaves": [],
               "groups": [],
               "array": [],
-              "path": "commerce.cartAbandons.id"
+              "path": "web.webInteraction.URL"
             },
             {
-              "name": "value",
-              "type": "Double",
+              "name": "name",
+              "type": "String",
               "leaves": [],
               "groups": [],
               "array": [],
-              "path": "commerce.cartAbandons.value"
+              "path": "web.webInteraction.name"
+            },
+            {
+              "name": "region",
+              "type": "String",
+              "leaves": [],
+              "groups": [],
+              "array": [],
+              "path": "web.webInteraction.region"
+            },
+            {
+              "name": "type",
+              "type": "String",
+              "leaves": [],
+              "groups": [],
+              "array": [],
+              "path": "web.webInteraction.type"
             }
           ],
-          "groups": [],
-          "array": [],
-          "path": "commerce.cartAbandons"
-        },
-        {
-          "name": "checkouts",
-          "type": "Object",
-          "leaves": [
+          "groups": [
             {
-              "name": "id",
-              "type": "String",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.checkouts.id"
-            },
-            {
-              "name": "value",
-              "type": "Double",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.checkouts.value"
-            }
-          ],
-          "groups": [],
-          "array": [],
-          "path": "commerce.checkouts"
-        },
-        {
-          "name": "inStorePurchase",
-          "type": "Object",
-          "leaves": [
-            {
-              "name": "id",
-              "type": "String",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.inStorePurchase.id"
-            },
-            {
-              "name": "value",
-              "type": "Double",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.inStorePurchase.value"
-            }
-          ],
-          "groups": [],
-          "array": [],
-          "path": "commerce.inStorePurchase"
-        },
-        {
-          "name": "instantPurchase",
-          "type": "Object",
-          "leaves": [
-            {
-              "name": "id",
-              "type": "String",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.instantPurchase.id"
-            },
-            {
-              "name": "value",
-              "type": "Double",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.instantPurchase.value"
-            }
-          ],
-          "groups": [],
-          "array": [],
-          "path": "commerce.instantPurchase"
-        },
-        {
-          "name": "order",
-          "type": "Object",
-          "leaves": [
-            {
-              "name": "cancelDate",
-              "type": "DateTime",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.order.cancelDate"
-            },
-            {
-              "name": "createdDate",
-              "type": "DateTime",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.order.createdDate"
-            },
-            {
-              "name": "currencyCode",
-              "type": "String",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.order.currencyCode"
-            },
-            {
-              "name": "discountAmount",
-              "type": "Double",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.order.discountAmount"
-            },
-            {
-              "name": "lastUpdatedDate",
-              "type": "DateTime",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.order.lastUpdatedDate"
-            },
-            {
-              "name": "orderType",
-              "type": "String",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.order.orderType"
-            },
-            {
-              "name": "priceTotal",
-              "type": "Double",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.order.priceTotal"
-            },
-            {
-              "name": "purchaseID",
-              "type": "String",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.order.purchaseID"
-            },
-            {
-              "name": "purchaseOrderNumber",
-              "type": "String",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.order.purchaseOrderNumber"
-            },
-            {
-              "name": "taxAmount",
-              "type": "Double",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.order.taxAmount"
-            }
-          ],
-          "groups": [],
-          "array": [
-            {
-              "name": "payments",
-              "type": "array[]",
+              "name": "linkClicks",
+              "type": "Object",
               "leaves": [
                 {
-                  "name": "currencyCode",
+                  "name": "id",
                   "type": "String",
                   "leaves": [],
                   "groups": [],
                   "array": [],
-                  "path": "commerce.order.payments.currencyCode"
+                  "path": "web.webInteraction.linkClicks.id"
                 },
                 {
-                  "name": "paymentAmount",
+                  "name": "value",
                   "type": "Double",
                   "leaves": [],
                   "groups": [],
                   "array": [],
-                  "path": "commerce.order.payments.paymentAmount"
-                },
-                {
-                  "name": "paymentType",
-                  "type": "String",
-                  "leaves": [],
-                  "groups": [],
-                  "array": [],
-                  "path": "commerce.order.payments.paymentType"
-                },
-                {
-                  "name": "transactionID",
-                  "type": "String",
-                  "leaves": [],
-                  "groups": [],
-                  "array": [],
-                  "path": "commerce.order.payments.transactionID"
+                  "path": "web.webInteraction.linkClicks.value"
                 }
               ],
               "groups": [],
               "array": [],
-              "path": "commerce.order.payments"
-            },
-            {
-              "name": "refunds",
-              "type": "array[]",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.order.refunds"
+              "path": "web.webInteraction.linkClicks"
             }
           ],
-          "path": "commerce.order"
+          "array": [],
+          "path": "web.webInteraction"
         },
         {
-          "name": "productListAdds",
+          "name": "webPageDetails",
           "type": "Object",
           "leaves": [
             {
-              "name": "id",
+              "name": "URL",
               "type": "String",
               "leaves": [],
               "groups": [],
               "array": [],
-              "path": "commerce.productListAdds.id"
+              "path": "web.webPageDetails.URL"
             },
             {
-              "name": "value",
-              "type": "Double",
+              "name": "isErrorPage",
+              "type": "Boolean",
               "leaves": [],
               "groups": [],
               "array": [],
-              "path": "commerce.productListAdds.value"
-            }
-          ],
-          "groups": [],
-          "array": [],
-          "path": "commerce.productListAdds"
-        },
-        {
-          "name": "productListOpens",
-          "type": "Object",
-          "leaves": [
+              "path": "web.webPageDetails.isErrorPage"
+            },
             {
-              "name": "id",
+              "name": "isHomePage",
+              "type": "Boolean",
+              "leaves": [],
+              "groups": [],
+              "array": [],
+              "path": "web.webPageDetails.isHomePage"
+            },
+            {
+              "name": "name",
               "type": "String",
               "leaves": [],
               "groups": [],
               "array": [],
-              "path": "commerce.productListOpens.id"
+              "path": "web.webPageDetails.name"
             },
             {
-              "name": "value",
-              "type": "Double",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.productListOpens.value"
-            }
-          ],
-          "groups": [],
-          "array": [],
-          "path": "commerce.productListOpens"
-        },
-        {
-          "name": "productListRemovals",
-          "type": "Object",
-          "leaves": [
-            {
-              "name": "id",
+              "name": "server",
               "type": "String",
               "leaves": [],
               "groups": [],
               "array": [],
-              "path": "commerce.productListRemovals.id"
+              "path": "web.webPageDetails.server"
             },
             {
-              "name": "value",
-              "type": "Double",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.productListRemovals.value"
-            }
-          ],
-          "groups": [],
-          "array": [],
-          "path": "commerce.productListRemovals"
-        },
-        {
-          "name": "productListReopens",
-          "type": "Object",
-          "leaves": [
-            {
-              "name": "id",
+              "name": "siteSection",
               "type": "String",
               "leaves": [],
               "groups": [],
               "array": [],
-              "path": "commerce.productListReopens.id"
+              "path": "web.webPageDetails.siteSection"
             },
             {
-              "name": "value",
-              "type": "Double",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.productListReopens.value"
-            }
-          ],
-          "groups": [],
-          "array": [],
-          "path": "commerce.productListReopens"
-        },
-        {
-          "name": "productListViews",
-          "type": "Object",
-          "leaves": [
-            {
-              "name": "id",
+              "name": "viewName",
               "type": "String",
               "leaves": [],
               "groups": [],
               "array": [],
-              "path": "commerce.productListViews.id"
-            },
-            {
-              "name": "value",
-              "type": "Double",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.productListViews.value"
+              "path": "web.webPageDetails.viewName"
             }
           ],
-          "groups": [],
+          "groups": [
+            {
+              "name": "pageViews",
+              "type": "Object",
+              "leaves": [
+                {
+                  "name": "id",
+                  "type": "String",
+                  "leaves": [],
+                  "groups": [],
+                  "array": [],
+                  "path": "web.webPageDetails.pageViews.id"
+                },
+                {
+                  "name": "value",
+                  "type": "Double",
+                  "leaves": [],
+                  "groups": [],
+                  "array": [],
+                  "path": "web.webPageDetails.pageViews.value"
+                }
+              ],
+              "groups": [],
+              "array": [],
+              "path": "web.webPageDetails.pageViews"
+            }
+          ],
           "array": [],
-          "path": "commerce.productListViews"
+          "path": "web.webPageDetails"
         },
         {
-          "name": "productViews",
+          "name": "webReferrer",
           "type": "Object",
           "leaves": [
             {
-              "name": "id",
+              "name": "URL",
               "type": "String",
               "leaves": [],
               "groups": [],
               "array": [],
-              "path": "commerce.productViews.id"
+              "path": "web.webReferrer.URL"
             },
             {
-              "name": "value",
-              "type": "Double",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.productViews.value"
-            }
-          ],
-          "groups": [],
-          "array": [],
-          "path": "commerce.productViews"
-        },
-        {
-          "name": "purchases",
-          "type": "Object",
-          "leaves": [
-            {
-              "name": "id",
+              "name": "type",
               "type": "String",
               "leaves": [],
               "groups": [],
               "array": [],
-              "path": "commerce.purchases.id"
-            },
-            {
-              "name": "value",
-              "type": "Double",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.purchases.value"
+              "path": "web.webReferrer.type"
             }
           ],
           "groups": [],
           "array": [],
-          "path": "commerce.purchases"
-        },
-        {
-          "name": "requisitionListAdds",
-          "type": "Object",
-          "leaves": [
-            {
-              "name": "id",
-              "type": "String",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.requisitionListAdds.id"
-            },
-            {
-              "name": "value",
-              "type": "Double",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.requisitionListAdds.value"
-            }
-          ],
-          "groups": [],
-          "array": [],
-          "path": "commerce.requisitionListAdds"
-        },
-        {
-          "name": "requisitionListOpens",
-          "type": "Object",
-          "leaves": [
-            {
-              "name": "id",
-              "type": "String",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.requisitionListOpens.id"
-            },
-            {
-              "name": "value",
-              "type": "Double",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.requisitionListOpens.value"
-            }
-          ],
-          "groups": [],
-          "array": [],
-          "path": "commerce.requisitionListOpens"
-        },
-        {
-          "name": "requisitionListRemovals",
-          "type": "Object",
-          "leaves": [
-            {
-              "name": "id",
-              "type": "String",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.requisitionListRemovals.id"
-            },
-            {
-              "name": "value",
-              "type": "Double",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.requisitionListRemovals.value"
-            }
-          ],
-          "groups": [],
-          "array": [],
-          "path": "commerce.requisitionListRemovals"
-        },
-        {
-          "name": "saveForLaters",
-          "type": "Object",
-          "leaves": [
-            {
-              "name": "id",
-              "type": "String",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.saveForLaters.id"
-            },
-            {
-              "name": "value",
-              "type": "Double",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "commerce.saveForLaters.value"
-            }
-          ],
-          "groups": [],
-          "array": [],
-          "path": "commerce.saveForLaters"
+          "path": "web.webReferrer"
         }
       ],
       "array": [],
-      "path": "commerce"
+      "path": "web"
     }
   ],
-  "array": [
-    {
-      "name": "productListItems",
-      "type": "array[]",
-      "leaves": [
-        {
-          "name": "selectedOptions",
-          "type": "Object[]",
-          "leaves": [
-            {
-              "name": "attribute",
-              "type": "String",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "productListItems.selectedOptions.attribute"
-            },
-            {
-              "name": "value",
-              "type": "String",
-              "leaves": [],
-              "groups": [],
-              "array": [],
-              "path": "productListItems.selectedOptions.value"
-            }
-          ],
-          "groups": [],
-          "array": [],
-          "path": "productListItems.selectedOptions"
-        },
-        {
-          "name": "SKU",
-          "type": "String",
-          "leaves": [],
-          "groups": [],
-          "array": [],
-          "path": "productListItems.SKU"
-        },
-        {
-          "name": "_id",
-          "type": "String",
-          "leaves": [],
-          "groups": [],
-          "array": [],
-          "path": "productListItems._id"
-        },
-        {
-          "name": "currencyCode",
-          "type": "String",
-          "leaves": [],
-          "groups": [],
-          "array": [],
-          "path": "productListItems.currencyCode"
-        },
-        {
-          "name": "discountAmount",
-          "type": "Double",
-          "leaves": [],
-          "groups": [],
-          "array": [],
-          "path": "productListItems.discountAmount"
-        },
-        {
-          "name": "name",
-          "type": "String",
-          "leaves": [],
-          "groups": [],
-          "array": [],
-          "path": "productListItems.name"
-        },
-        {
-          "name": "priceTotal",
-          "type": "Double",
-          "leaves": [],
-          "groups": [],
-          "array": [],
-          "path": "productListItems.priceTotal"
-        },
-        {
-          "name": "product",
-          "type": "String",
-          "leaves": [],
-          "groups": [],
-          "array": [],
-          "path": "productListItems.product"
-        },
-        {
-          "name": "productAddMethod",
-          "type": "String",
-          "leaves": [],
-          "groups": [],
-          "array": [],
-          "path": "productListItems.productAddMethod"
-        },
-        {
-          "name": "productImageUrl",
-          "type": "String",
-          "leaves": [],
-          "groups": [],
-          "array": [],
-          "path": "productListItems.productImageUrl"
-        },
-        {
-          "name": "quantity",
-          "type": "Integer",
-          "leaves": [],
-          "groups": [],
-          "array": [],
-          "path": "productListItems.quantity"
-        },
-        {
-          "name": "refundAmount",
-          "type": "Double",
-          "leaves": [],
-          "groups": [],
-          "array": [],
-          "path": "productListItems.refundAmount"
-        },
-        {
-          "name": "unitOfMeasureCode",
-          "type": "String",
-          "leaves": [],
-          "groups": [],
-          "array": [],
-          "path": "productListItems.unitOfMeasureCode"
-        }
-      ],
-      "groups": [],
-      "array": [
-        {
-          "name": "productCategories",
-          "type": "array[]",
-          "leaves": [],
-          "groups": [],
-          "array": [],
-          "path": "productListItems.productCategories"
-        }
-      ],
-      "path": "productListItems"
-    }
-  ],
+  "array": [],
   "path": ""
 }
