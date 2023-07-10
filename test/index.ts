@@ -1,9 +1,12 @@
 import type { Schema } from "../out/type";
 
 const schema: Schema = {
-  commerce: {
-    order: {
-      priceTotal: 1,
+  web: {
+    webPageDetails: {
+      pageViews: {
+        value: 1,
+      },
+      is,
     },
   },
 };

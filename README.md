@@ -39,6 +39,11 @@ npm run build
 4. A file named `dist/index.js` will be generated. Copy the code from that file.
 5. Paste the copied code into the console and execute it.
 6. An object will be outputted to the console. Copy that object.
+
+> **Note**  
+> If the tool doesn't output an object, try clicking on any DOM element using the developer tools. After that, run the script again, and it should succeed.
+> <img src='./assets/click-tree.png' width='600px'/>
+
 7. Paste the copied object into a file named `input/data.json` and save it.
 8. Run the following command to generate the type.
 
