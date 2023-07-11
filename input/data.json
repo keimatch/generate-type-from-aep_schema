@@ -147,6 +147,14 @@
           "type": "Object",
           "leaves": [
             {
+              "name": "build",
+              "type": "String",
+              "leaves": [],
+              "groups": [],
+              "array": [],
+              "path": "_ags731.pageInfo.build"
+            },
+            {
               "name": "pageTitle",
               "type": "String",
               "leaves": [],

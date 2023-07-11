@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "playground": "ts-node ./playground/index.ts",
-    "compile:playground": "tsc ./playground/index.ts --target es6 --outDir ./",
+    "compile:playground": "tsc ./playground/$npm_config_filename --target es6 --outDir ./",
     "build": "parcel build src/dom/index.ts --no-cache --no-source-maps --dist-dir dist",
     "watch": "parcel watch --no-cache src/dom/index.ts",
     "generate": "run-s generate:jsonSchema generate:type generate:remove-any",
